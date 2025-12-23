@@ -22,12 +22,12 @@ public class ChatService {
 
     public static void init() {
         try {
-            Path p = Path.of("backend/data/characters.json");
-            if (!Files.exists(p)) {
+            ClassPathResource resource = new ClassPathResource("data/characters.json");
+            if (!resource.exists()) {
                 characters = new ArrayList<>();
                 return;
             }
-            String json = Files.readString(p);
+            String json = new String(resource.getInputStream().readAllBytes());
             characters = mapper.readValue(json, new TypeReference<List<Character>>() {});
             for (Character c : characters) {
                 charMap.put(c.getId(), c);

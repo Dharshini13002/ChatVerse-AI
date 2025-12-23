@@ -5,11 +5,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.List;
 import java.util.Map;
+import javax.annotation.PostConstruct;
 
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins = "*")
 public class ChatController {
+
+    @PostConstruct
+    public void init() {
+        ChatService.init();
+    }
 
     @GetMapping("/characters")
     public ResponseEntity<List<Character>> getCharacters() {
