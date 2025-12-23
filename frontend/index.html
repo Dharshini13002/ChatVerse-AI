@@ -5,6 +5,7 @@
   <title>ChatVerse AI</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="theme-red-black">
 
   <!-- Sidebar -->
@@ -31,24 +32,42 @@
       <option value="theme-gold-black">Gold & Black</option>
     </select>
 
-    <button class="settings-btn">Settings</button>
+    <button class="settings-btn" onclick="openSettings()">Settings</button>
   </aside>
 
-  <!-- Main Chat -->
+  <!-- Chat Area -->
   <main class="chat-container">
     <div class="chat-header">
       <h3 id="characterName">Dark Warrior</h3>
     </div>
 
     <div class="chat-box" id="chatBox">
-      <div class="message ai">Hello! Choose a theme and start chatting ✨</div>
+      <div class="message ai fade-in">
+        Hello 👋 Choose a character & start chatting!
+      </div>
     </div>
 
     <div class="chat-input">
-      <input type="text" placeholder="Type your message..." />
-      <button>Send</button>
+      <input id="userInput" type="text" placeholder="Type your message..." />
+      <button id="sendBtn">Send</button>
     </div>
   </main>
+
+  <!-- Settings Modal -->
+  <div id="settingsModal" class="modal hidden">
+    <div class="modal-content slide-up">
+      <h3>Settings & Guide</h3>
+
+      <ul>
+        <li>Select a character</li>
+        <li>Choose or auto-switch themes</li>
+        <li>Chat messages are saved per session</li>
+        <li>Themes are remembered automatically</li>
+      </ul>
+
+      <button onclick="closeSettings()">Close</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
