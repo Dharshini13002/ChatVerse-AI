@@ -14,12 +14,7 @@
 
     <label>Character</label>
     <select id="characterSelect">
-      <option value="red-black">Dark Warrior</option>
-      <option value="yellow-coffee">Coffee Sage</option>
-      <option value="funky-pink">Funky Bot</option>
-      <option value="pinky">Soft Pink AI</option>
-      <option value="purple-black">Cyber Oracle</option>
-      <option value="gold-black">Golden King</option>
+      <!-- Populated dynamically from backend or fallback list -->
     </select>
 
     <label>Theme</label>
@@ -38,7 +33,9 @@
   <!-- Chat Area -->
   <main class="chat-container">
     <div class="chat-header">
+      <img id="characterAvatar" class="avatar" src="assets/icons/sakura.svg" alt="avatar" />
       <h3 id="characterName">Dark Warrior</h3>
+      <p id="characterPersonality" class="personality">Calm, poetic, loves cherry blossoms.</p>
     </div>
 
     <div class="chat-box" id="chatBox">
