@@ -39,7 +39,9 @@ ChatVerse-AI/
 3. **Frontend**: Open terminal in `frontend` folder: `python -m http.server 3000`, then open `http://localhost:3000/index.html` in browser.
 4. Select a character, type messages, and chat — replies come from backend!
 
-## Notes
-- Frontend fetches from backend at localhost:8080 with CORS enabled.
-- If backend not running, frontend uses local fallback replies.
-- Chat history saved in `backend/data/chats.txt`.
+## Hosting
+- **Frontend on Vercel**: Connect your GitHub repo to Vercel, set root directory to `frontend`, deploy. The site will be live with fallback chat (backend not hosted).
+- **Full App**: Backend needs a server (e.g., Heroku for Java), frontend as above or static host.
+
+## Live Demo
+Frontend hosted at: [Your Vercel URL after deployment]
